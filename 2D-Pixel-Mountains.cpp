@@ -1,19 +1,6 @@
 //UNFINSHED AT THE MOMENT, MOUNTAINS R NOT SMOOTH ENOUGH
 #include <iostream>
-#include <string>
 #include <Windows.h>
-
-std::string chartRow(int num) {
-    std::string row{ "" };
-
-    for (int i = 0; i < num; i++) {
-        row.append(" ");
-    }
-
-    row.append("0");
-    return row;
-}
-
 
 int main() {
     int value{ 0 };
