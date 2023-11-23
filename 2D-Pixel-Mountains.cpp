@@ -1,4 +1,3 @@
-//UNFINSHED AT THE MOMENT, MOUNTAINS R NOT SMOOTH ENOUGH
 #include <iostream>
 #include <Windows.h>
 
@@ -40,23 +39,20 @@ int main() {
             }
 
             /*procedural handling*/
-
-            //MAKE MORE PROCEDURAL eg. 12212343432321 and not 1247643235
-            if (randNum == 1 ) {
+            randNum = 1 + rand() % 2; 
+            if (randNum == 1 && plane[i-1][j-1] - value < 2 && plane[i - 1][j] - value < 2 && plane[i - 1][j+1] - value < 2) {
                 if (value > 0) {
                 value--;
                 }
             }
-            //make actually random
-            randNum = 1 + rand() % 2; 
-
-            //also make more procedural 
-            if (randNum == 2 ) {
+            
+            if (randNum == 2 && value - plane[i - 1][j] < 2 && value - plane[i-1][j+1] < 2 && value - plane[i-1][j-1] < 2) {
                 value++;
             }
             
+            
            
-            while(value > 25) {
+            while(value >= 25 ) {
 
                 value--;
             }
@@ -65,9 +61,10 @@ int main() {
             
             plane[i][j] = value;
             
-            color = RGB(0 , value * 10, 0);
+            color = RGB(0 , (value) * 10, 0);
             SetPixel(DC, i + 200, j + 200, color);
         }
 
     }
 }
+
